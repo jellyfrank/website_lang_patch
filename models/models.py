@@ -20,6 +20,6 @@ class website(models.Model):
         if not self.domain:
             return ''
         res = urls.url_parse(self.domain)
-        base_url = self.env['ir.config_paramter'].get_param("web.base.ur")
+        base_url = self.env['ir.config_paramter'].get_param("web.base.url")
         protocal = base_url.split("://")[0]
         return protocal + self.domain if not res.scheme else self.domain
